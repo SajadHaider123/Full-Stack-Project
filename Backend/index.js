@@ -6,7 +6,7 @@ const port = 5000;
 app.use(cors());
 app.use(express());
 
-app.get('/api/raw_call_logs', (req, res) => {
+app.get('/api/raw_call_logss', (req, res) => {
     res.json([
         {id: 1, phone: "03482311676"},
         {id: 2, phone: "03234567676"},
