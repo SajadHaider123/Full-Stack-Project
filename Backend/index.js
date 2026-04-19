@@ -29,6 +29,28 @@ app.get('/api/departments', async (req, res) => {
     
 });
 
+app.get('/api/locations', async (req, res) => {
+    try {
+        const result = await pool.query('select * from locations');
+        res.json(result.rows)
+    } catch (err) {
+        console.error('data connection failed', err.message)
+        res.status(500).send("passed")
+    }
+    
+});
+
+app.get('/api/regions', async (req, res) => {
+    try {
+    const result = await pool.query('select * from regions')
+    res.json(result.rows)
+    } catch {
+        console.error("Data base is not found", err.message)
+        res.status(500).send("fail")
+    }
+
+});
+
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
