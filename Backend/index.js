@@ -1,17 +1,32 @@
 const express = require('express');
 const cors = require('cors');
+const pool = require('./db'); // Database connection import kiya
 const app = express();
 const port = 5000;
 
 app.use(cors());
-app.use(express());
+app.use(express.json());
 
-app.get('/api/raw_call_logss', (req, res) => {
-    res.json([
-        {id: 1, phone: "03482311676"},
-        {id: 2, phone: "03234567676"},
+// Real Data Fetch Route
+app.get('/api/employees', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM employees'); 
+        res.json(result.rows);
+    } catch (err) {
+        console.error("Connection Error:", err.message);
+        res.status(500).send("Database connection failed!");
+    }
+});
 
-    ])
+app.get('/api/departments', async (req, res) => {
+    try {
+        const result = await pool.query('Select * from departments');
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Data connection failed', err.message);
+        res.status(500).send("Database connection failed!");
+    }
+    
 });
 
 app.listen(port, () => {
