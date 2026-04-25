@@ -10,7 +10,7 @@ const pool = new Pool({
 });
 
 pool.on('connect', () => {
-  console.log('PostgreSQL Database se connection ho gaya!');
+  console.log('database is connected');
 });
 
 module.exports = pool;

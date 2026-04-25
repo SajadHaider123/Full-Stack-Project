@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const pool = require('./db'); // Database connection import kiya
@@ -62,7 +63,18 @@ app.get('/api/jobs', async (req, res) => {
     }
 })
 
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+    console.log(`-----------------------------------------`);
+    console.log(`🚀 Server is running on: http://localhost:${port}`);
+    console.log(`-----------------------------------------`);
+    
+    // Ab aapko open() ki zaroorat nahi agar aap click karke jana chahte hain
+    // Lekin agar auto-open rakhna hai to link update kar den:
+    // open(`http://localhost:${port}`); 
 });
