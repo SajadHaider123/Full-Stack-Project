@@ -12,8 +12,6 @@ import Dashboard from './components/Dashboard.vue'
       <TopHeader />
       <main class="main-body">
         <Dashboard />
-        
-        <router-view />
       </main>
     </div>
   </div>
@@ -31,13 +29,13 @@ import Dashboard from './components/Dashboard.vue'
 body {
   background: #f1f5f9; /* light gray = depth creator */
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* MAIN LAYOUT */
 .layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 /* RIGHT SIDE AREA */
@@ -46,29 +44,30 @@ body {
   margin-left: 280px; /* sidebar space */
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 /* MAIN CONTENT AREA */
 .main-body {
-  margin-top: 100px; /* header space */
-  padding: 30px;
+  margin-top: 95px; /* header space */
+  padding: 0 20px 20px 5px; /* Small padding, 5px left to align nicely */
   flex: 1;
 }
 
-/* 🔥 CARD STYLE (IMPORTANT FOR CONTRAST) */
+/* Dashboard Scrolling Wrapper */
 .main-body > * {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for cards */
-.main-body > *:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  height: calc(100vh - 115px);
+  padding: 5px; /* Tiny padding to prevent shadow clipping */
+  
+  /* Transparent so it doesn't mess up the inner cards theme */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  
+  /* Internal scroll so content doesn't go under header */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* SCROLLBAR (clean) */

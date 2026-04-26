@@ -239,13 +239,7 @@
   
   <style scoped>
   .dashboard-content {
-    padding: 20px 30px;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    min-height: calc(100vh - 95px);
-    margin-top: 85px;
-    margin-left: 275px;
-    width: calc(100% - 275px);
-    border-radius: 25px;
+    width: 100%;
   }
   
   /* Stats Grid */
@@ -257,23 +251,23 @@
   }
   
   .stat-card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08));
+    backdrop-filter: blur(12px);
     padding: 20px 24px;
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
   }
   
   .stat-card:hover {
     transform: translateY(-3px);
-    background: white;
-    box-shadow: 0 12px 25px -10px rgba(99, 102, 241, 0.15);
-    border-color: rgba(99, 102, 241, 0.2);
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(168,85,247,0.12));
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
   }
   
   .stat-info h3 {
@@ -351,19 +345,19 @@
   
   /* Chart Card */
   .chart-card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08));
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
     padding: 20px;
-    border: 1px solid rgba(99, 102, 241, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     transition: all 0.3s;
   }
   
   .chart-card:hover {
-    background: white;
-    border-color: rgba(99, 102, 241, 0.2);
-    box-shadow: 0 12px 25px -10px rgba(99, 102, 241, 0.1);
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(168,85,247,0.12));
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
   }
   
   .card-header {
@@ -412,18 +406,19 @@
   
   /* Activity Card */
   .activity-card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08));
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
     padding: 20px;
-    border: 1px solid rgba(99, 102, 241, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     transition: all 0.3s;
   }
   
   .activity-card:hover {
-    background: white;
-    border-color: rgba(99, 102, 241, 0.2);
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(168,85,247,0.12));
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
   }
   
   .activity-card .card-header h3 {
@@ -488,22 +483,23 @@
   }
   
   .bottom-card {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08));
+    backdrop-filter: blur(12px);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     gap: 16px;
-    border: 1px solid rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     transition: all 0.3s;
   }
   
   .bottom-card:hover {
     transform: translateY(-3px);
-    background: white;
-    border-color: rgba(99, 102, 241, 0.2);
-    box-shadow: 0 12px 25px -10px rgba(99, 102, 241, 0.15);
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(168,85,247,0.12));
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
   }
   
   .bottom-icon {
@@ -558,12 +554,6 @@
   
   /* Responsive */
   @media (max-width: 1200px) {
-    .dashboard-content {
-      padding: 20px;
-      margin-left: 260px;
-      width: calc(100% - 260px);
-    }
-    
     .stats-grid {
       gap: 16px;
     }
@@ -574,11 +564,6 @@
   }
   
   @media (max-width: 1024px) {
-    .dashboard-content {
-      margin-left: 80px;
-      width: calc(100% - 80px);
-    }
-    
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -593,13 +578,6 @@
   }
   
   @media (max-width: 768px) {
-    .dashboard-content {
-      margin-left: 0;
-      width: 100%;
-      padding: 16px;
-      margin-top: 75px;
-    }
-    
     .stats-grid {
       grid-template-columns: 1fr;
     }
