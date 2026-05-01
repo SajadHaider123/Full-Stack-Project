@@ -241,7 +241,7 @@ async function fetchAllDataAndRender() {
     } catch(err) { console.error(err); }
 }
 
-function showSection(section) {
+function showSection(section) { 
     document.getElementById('dashboardSection').style.display = 'none';
     document.getElementById('employeesSection').style.display = 'none';
     document.getElementById('addEmployeeSection').style.display = 'none';
